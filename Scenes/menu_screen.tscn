@@ -1,0 +1,47 @@
+[gd_scene load_steps=4 format=3 uid="uid://bwa7qkeuopm7i"]
+
+[ext_resource type="FontFile" uid="uid://b70bxhyt3l7rt" path="res://Assets/Fonts/The Augusta.otf" id="1_023x3"]
+[ext_resource type="FontFile" uid="uid://fmushw6v5lf4" path="res://Assets/Fonts/MANOLETE.ttf" id="2_44ayl"]
+[ext_resource type="Script" path="res://Scripts/StartButton.gd" id="3_k31yr"]
+
+[node name="MenuScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.0
+offset_right = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Color Rect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1283.0
+offset_bottom = 719.0
+color = Color(1, 0.933333, 0.85098, 1)
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 204.0
+offset_top = 143.0
+offset_right = 1148.0
+offset_bottom = 427.0
+theme_override_colors/font_color = Color(0.223529, 0.654902, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_023x3")
+theme_override_font_sizes/font_size = 120
+text = "Sweet Beast Brawl"
+
+[node name="StartButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 564.0
+offset_top = 494.0
+offset_right = 791.0
+offset_bottom = 550.0
+theme_override_colors/font_color = Color(0.529412, 0.768627, 1, 1)
+theme_override_fonts/font = ExtResource("2_44ayl")
+theme_override_font_sizes/font_size = 45
+text = "S T A R T"
+script = ExtResource("3_k31yr")
+
+[connection signal="pressed" from="StartButton" to="StartButton" method="_on_pressed"]

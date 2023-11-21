@@ -1,0 +1,53 @@
+[gd_scene load_steps=2 format=3 uid="uid://c8equirxmdq68"]
+
+[ext_resource type="FontFile" uid="uid://fmushw6v5lf4" path="res://Assets/Fonts/MANOLETE.ttf" id="1_ae7p3"]
+
+[node name="VictoryScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1277.0
+offset_bottom = 717.0
+color = Color(0.878431, 0.956863, 1, 1)
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 198.0
+offset_top = 132.0
+offset_right = 1100.0
+offset_bottom = 425.0
+theme_override_colors/font_color = Color(0.223529, 0.654902, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_ae7p3")
+theme_override_font_sizes/font_size = 100
+text = "You Win!
+Flawless Victory"
+horizontal_alignment = 1
+
+[node name="RestartButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 411.0
+offset_top = 463.0
+offset_right = 595.0
+offset_bottom = 525.0
+theme_override_colors/font_color = Color(0.529412, 0.768627, 1, 1)
+theme_override_fonts/font = ExtResource("1_ae7p3")
+theme_override_font_sizes/font_size = 20
+text = "Vamo de novo"
+
+[node name="MenuButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 690.0
+offset_top = 464.0
+offset_right = 873.0
+offset_bottom = 523.0
+theme_override_fonts/font = ExtResource("1_ae7p3")
+theme_override_font_sizes/font_size = 20
+text = "Menu
+"
