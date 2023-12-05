@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://rtvfwscd3tpf"
-path="res://.godot/imported/Owlet_Monster.png-0e3107e82aa68da0f6d4919c1cd3ece8.ctex"
+uid="uid://dij0w7spp1pvi"
+path="res://.godot/imported/Apple.png-d39f1fb3301db6b91deed11487888dc8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Owlet_Monster.png"
-dest_files=["res://.godot/imported/Owlet_Monster.png-0e3107e82aa68da0f6d4919c1cd3ece8.ctex"]
+source_file="res://Assets/Apple/Apple.png"
+dest_files=["res://.godot/imported/Apple.png-d39f1fb3301db6b91deed11487888dc8.ctex"]
 
 [params]
 

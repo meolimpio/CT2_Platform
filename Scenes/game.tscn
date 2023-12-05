@@ -1,6 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://by2qmrxy5l5uf"]
+[gd_scene load_steps=7 format=3 uid="uid://by2qmrxy5l5uf"]
 
 [ext_resource type="PackedScene" uid="uid://b8cm8ptgn3skl" path="res://Scenes/player.tscn" id="1_1i7mh"]
+[ext_resource type="PackedScene" uid="uid://cjwa5ajs3va3e" path="res://Scenes/apple.tscn" id="2_7ug0p"]
+[ext_resource type="FontFile" uid="uid://fmushw6v5lf4" path="res://Assets/Fonts/MANOLETE.ttf" id="3_04biv"]
+[ext_resource type="PackedScene" uid="uid://cwguyv3s4jcin" path="res://Scenes/enemy.tscn" id="4_oxwan"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_yjyc7"]
 size = Vector3(500, 50, 100)
@@ -13,25 +16,50 @@ size = Vector2(500.5, 50)
 [node name="Player" parent="." instance=ExtResource("1_1i7mh")]
 position = Vector2(104, 22)
 
-[node name="Platform" type="StaticBody2D" parent="."]
+[node name="Apple" parent="." instance=ExtResource("2_7ug0p")]
+position = Vector2(369, 166)
 
-[node name="MeshInstance2D" type="MeshInstance2D" parent="Platform"]
+[node name="Platforms" type="Node" parent="."]
+
+[node name="Platform" type="StaticBody2D" parent="Platforms"]
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Platforms/Platform"]
 modulate = Color(0.223529, 0.654902, 1, 1)
 position = Vector2(253, 236)
 mesh = SubResource("BoxMesh_yjyc7")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/Platform"]
 position = Vector2(252.75, 236)
 shape = SubResource("RectangleShape2D_ayik1")
 
-[node name="Platform2" type="StaticBody2D" parent="."]
-position = Vector2(515, -74)
+[node name="Platform2" type="StaticBody2D" parent="Platforms"]
+position = Vector2(566, 105)
 
-[node name="MeshInstance2D" type="MeshInstance2D" parent="Platform2"]
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Platforms/Platform2"]
 modulate = Color(0.223529, 0.654902, 1, 1)
 position = Vector2(253, 236)
 mesh = SubResource("BoxMesh_yjyc7")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform2"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/Platform2"]
 position = Vector2(252.75, 236)
 shape = SubResource("RectangleShape2D_ayik1")
+
+[node name="Enemy" parent="." instance=ExtResource("4_oxwan")]
+position = Vector2(755, 318)
+
+[node name="GUI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 187.0
+offset_bottom = 68.0
+
+[node name="Counter" type="Label" parent="GUI"]
+layout_mode = 1
+anchors_preset = -1
+offset_top = -1.0
+offset_right = 40.0
+offset_bottom = 22.0
+theme_override_fonts/font = ExtResource("3_04biv")
+text = "0
+"
+horizontal_alignment = 1

@@ -3,6 +3,7 @@ extends CharacterBody2D
 @export var speed = 300
 @export var gravity = 30
 @export var jump_force = 300
+const number_of_jumps = 2
 
 @onready var ap = $AnimationPlayer
 @onready var sprite = $Sprite2D
@@ -26,6 +27,8 @@ func _physics_process(delta):
 	
 	update_animations(horizontal_direction)
 	
+	respawn()
+	
 func update_animations(horizontal_direction):
 	if is_on_floor():
 		if horizontal_direction == 0:
@@ -36,4 +39,6 @@ func update_animations(horizontal_direction):
 		if velocity.y < 0:
 			ap.play("jump")
 	
-	
+func respawn():
+	if Input.is_action_just_pressed("respawn"):
+		get_tree().reload_current_scene()
