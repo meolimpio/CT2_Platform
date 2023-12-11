@@ -42,3 +42,4 @@ func update_animations(horizontal_direction):
 func respawn():
 	if Input.is_action_just_pressed("respawn"):
 		get_tree().reload_current_scene()
+
